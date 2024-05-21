@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamburguesería</title>
+    <script src="codigo.js" defer></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 100%;
+        }
+        main {
+            display: flex;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-top: 20px;
+        }
+        main h1 {
+            min-width: 100%;
+            font-size: 3rem;
+            text-align: center;
+            letter-spacing: 1rem;
+            color: rgb(156, 7, 7);
+        }
+        #productos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .producto {
+            box-shadow: 0 0 4px grey;
+            border-radius: 5px;
+            margin: 10px;
+            transition-property: transform;
+            transition-duration: 500ms;
+        }
+        .producto img {
+            padding: 10px;
+        }
+        .producto:hover {
+            transform: scale(1.1);
+        }
+        .nombre {
+            padding: 5px;
+            text-transform: uppercase;
+            font-style: italic;
+            font-weight: bold;
+            color:rgb(10, 77, 170);
+        }
+        .precio {
+            text-align: end;
+            padding: 5px;
+            background-color: rgba(17, 180, 235, 0.594);
+        }
+        #pedido {
+            min-width: 200px;
+            padding: 20px;
+            background-color: antiquewhite;
+            color:rgb(157, 98, 9)
+        }
+        #pedido h2 {
+            font-size: 1.4rem;
+            text-align: center;
+            border-bottom: 2px solid rgb(157, 98, 9);
+        }
+        #pedido ul {
+            list-style-position: inside;
+        }
+        #pedido li {
+            padding: 5px;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid rgb(220, 187, 145);
+        }
+        #total {
+            padding: 5px;
+            text-align: end;
+            font-weight: bold;
+            border-top: 2px solid rgb(157, 98, 9);;
+        }
+        #vaciar {
+            border-radius: 5px;
+            background-color: rgb(165, 11, 11);
+            color:white;
+            text-align: center;
+            width: 100%;
+            padding: 5px;
+            font-weight: bold;
+        }
+        #vaciar:hover {
+            background-color: rgb(223, 58, 58);
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        <section id="productos">
+            <h1>Menú</h1>
+            <div class="producto" data-precio="6">
+                <p class="nombre">Pollo</p>
+                <img src="imagenes/chicken-leg.png" alt="">
+                <p class="precio">6 €</p>
+            </div>
+            <div class="producto" data-precio="1">
+                <p class="nombre">Refresco</p>
+                <img src="imagenes/coke.png" alt="">
+                <p class="precio">1 €</p>
+            </div>
+            <div class="producto" data-precio="3">
+                <p class="nombre">Patatas</p>
+                <img src="imagenes/fries.png" alt="">
+                <p class="precio">3 €</p>
+            </div>
+            <div class="producto" data-precio="2">
+                <p class="nombre">Pan de ajo</p>
+                <img src="imagenes/garlic-bread.png" alt="">
+                <p class="precio">2 €</p>
+            </div>
+            <div class="producto" data-precio="5">
+                <p class="nombre">Hamburguesa</p>
+                <img src="imagenes/hamburger.png" alt="">
+                <p class="precio">5 €</p>
+            </div>
+            <div class="producto" data-precio="4">
+                <p class="nombre">Perrito caliente</p>
+                <img src="imagenes/hot-dog.png" alt="">
+                <p class="precio">4 €</p>
+            </div>
+            <div class="producto" data-precio="6">
+                <p class="nombre">Albóndigas</p>
+                <img src="imagenes/meatballs.png" alt="">
+                <p class="precio">6 €</p>
+            </div>
+            <div class="producto" data-precio="10">
+                <p class="nombre">Pizza</p>
+                <img src="imagenes/pizza.png" alt="">
+                <p class="precio">10 €</p>
+            </div>
+            <div class="producto" data-precio="8">
+                <p class="nombre">Espaguetis</p>
+                <img src="imagenes/spaguetti.png" alt="">
+                <p class="precio">8 €</p>
+            </div>
+        </section>
+        <section id="pedido">
+            <h2>Pedido</h2>
+            <ul id="elegidos"></ul>
+            <p id="total">0 €</p>
+            <input type="button" value="vaciar" id="vaciar">
+        </section>
+    </main>
+    
+</body>
+</html>
